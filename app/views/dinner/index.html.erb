@@ -1,0 +1,15 @@
+<h1>Chicken Dinner</h1>
+<table>
+ 
+  <% @food_items.each do |food_items| %>
+    <tr>
+      <td><%= food_items.item_name %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= form_tag(create_dinner_path, method: "post") do %>
+  <%= label_tag(:q, "Add:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Save") %>
+<% end %>
